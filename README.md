@@ -61,3 +61,7 @@ Lines	Lift script.cs
 
 These are some sample codes and their explanation 
 Thank you for your valuable time.
+
+Trailer link: https://drive.google.com/drive/folders/1-5fgRt90JthuPtU9JToPwdHaIrzr5lgl
+
+Walk-Through presentation: https://drive.google.com/file/d/1VK0wHLCJBsIvj4WdIH09yO-O2yRb1nt-/view?usp=share_link
