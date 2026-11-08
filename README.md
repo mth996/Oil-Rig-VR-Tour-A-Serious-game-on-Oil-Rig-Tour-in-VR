@@ -4,6 +4,8 @@ An educational **virtual reality serious game** built in Unity for **Meta/Oculus
 
 > **Portfolio Project:** VR Education / Serious Game / Industrial Simulation
 
+**Context:** Developed during my internship on a research grant project at Asia Pacific University (APU), Apr – Aug 2021 · **Engine:** Unity · **Platform:** Meta/Oculus Quest 2
+
 ## Overview
 
 Oil Rig VR Tour combines immersive exploration with guided learning and knowledge assessment. The experience introduces the player to important oil-rig and drilling components through an AI-guided tour, then reinforces that learning through a second level where the player must identify key locations and complete the required objectives.
@@ -36,19 +38,19 @@ The objective system tracks locations including the **Turntable, Drawworks, Blow
 ## Core Systems
 
 ### NavMesh-Guided Learning
-`DrillComponents.cs` coordinates the guided tour using Unity's `NavMeshAgent`. The guide moves between predefined destinations while trigger events and UI panels present information about individual drilling components.
+`Scripts/DrillComponents.cs` coordinates the guided tour using Unity's `NavMeshAgent`. The guide moves between predefined destinations while trigger events and UI panels present information about individual drilling components.
 
 ### Objective & Progress Tracking
-`GameManager.cs` tracks the player's progress across the assessment level. Individual destination scripts report completed objectives, and the level-complete state is activated after all required locations and the quiz are completed.
+`Scripts/GameManager.cs` tracks the player's progress across the assessment level. Individual destination scripts report completed objectives, and the level-complete state is activated after all required locations and the quiz are completed.
 
 ### Location Interaction
 Dedicated destination scripts handle individual oil-rig objectives, including:
 
-- `BOPDestination.cs`
-- `DrawWorksDestination.cs`
-- `MudPumpDestination.cs`
-- `ShaleShakersDestination.cs`
-- `TurnTableDestination.cs`
+- `Scripts/BOPDestination.cs`
+- `Scripts/DrawWorksDestination.cs`
+- `Scripts/MudPumpDestination.cs`
+- `Scripts/ShaleShakerDestination.cs`
+- `Scripts/TurnTableDestination.cs`
 
 These systems connect world-space exploration with objective state and UI feedback.
 
@@ -81,11 +83,11 @@ The final version prioritized a smoother standalone VR experience, including use
 
 | Script | Purpose |
 | --- | --- |
-| `DrillComponents.cs` | Controls the NavMesh-guided tour, component UI, destinations, and tour progression |
-| `GameManager.cs` | Tracks assessment objectives, quiz completion, and level completion |
-| `UIManager.cs` | Updates objective and interface feedback |
-| `TriggerToOnNavmesh.cs` | Reactivates navigation based on player trigger events |
-| `ElevatorSystem.cs` | Controls lift/elevator movement |
+| `Scripts/DrillComponents.cs` | Controls the NavMesh-guided tour, component UI, destinations, and tour progression |
+| `Scripts/GameManager.cs` | Tracks assessment objectives, quiz completion, and level completion |
+| `Scripts/UIManager.cs` | Updates objective and interface feedback |
+| `Scripts/TriggerToOnNavmesh.cs` | Reactivates navigation based on player trigger events |
+| `Scripts/ElevatorSystem.cs` | Controls lift/elevator movement |
 | Destination scripts | Validate discovery of individual oil-rig components |
 
 ## Development Evolution
@@ -109,6 +111,10 @@ This project demonstrates my early work in **VR serious games and industrial/edu
 - [Trailer / Project Media](https://drive.google.com/drive/folders/1-5fgRt90JthuPtU9JToPwdHaIrzr5lgl)
 - [Walk-Through Presentation](https://drive.google.com/file/d/1VK0wHLCJBsIvj4WdIH09yO-O2yRb1nt-/view?usp=share_link)
 
-## Future Portfolio Update
+## Repository Structure
 
-Project screenshots and selected gameplay images can be added here to visually document the guided tour, drilling components, offshore assessment level, and Quest 2 experience.
+```text
+Oil-Rig-VR-Tour/
+├── Scripts/   # All C# scripts for the tour, assessment, elevators and UI (with Unity .meta files)
+└── README.md
+```
